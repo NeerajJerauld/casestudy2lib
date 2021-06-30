@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" /> -->
+    <link rel="stylesheet" href="/css/bootstrapstyle.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-outline-primary ms-5 me-2 " type="button">
+                    <a class="nav-link active text-white" aria-current="page" href="/index1"
+                      >Home</a
+                    >
+                  </button>
+                </li>
+                <%for(i=0;i<nav.length;i++){%>
+                    <li class="nav-item">
+                      <button class="btn btn-outline-primary me-2 " type="button">
+                        <a class="nav-link active text-white" aria-current="page" href="<%=nav[i].link%>"
+                          ><%=nav[i].name%></a
+                        >
+                      </button>
+                    </li>
+                  <%}%>
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+  
+      <div class="container-fluid pb-4" id="masthead">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="">
+              <h1 class="mx-5 mt-5"><%=title%></h1>
+              <!-- <h6 class="mx-5 pb-5">Sub-heading</h6> -->
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div
+              class="row ms-3 me-3 mt-4 mb-4 well border border-dark rounded-3"
+              style="height: 127px"
+            >
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END OF MASTHEAD -->
+  
+      <!-- START OF STORY CONTENT -->
+  
+      <div class="container-fluid" style="margin-top: -30px">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-10 col-11 bg-white">
+            <div class="top-spacer mb-3">
+              <!--/stories-->
+              <%for(j=0;j<books.length;j++){%>
+              <div class="card mt-5 border-0">
+                <div class="row g-2 p-3">
+                  <div class="col-md-2 d-flex justify-content-center my-auto">
+                    <img
+                      class="rounded-circle"
+                      src="/images/<%=books[j].image%>"
+                      alt="..."
+                      style="width: 120px; height: 120px"
+                    />
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body col-md-6 ">
+                      <h3 class="card-title"><%=books[j].title%></h3>
+                      <h5>
+                        <span class="bg-secondary rounded-3 p-1">Author: <%=books[j].author%></span>
+                      </h5>
+                      <div class="d-flex">
+                        <p class="card-text">
+                          <small class="text-muted">Genre: <%=books[j].genre%>  • </small>
+                        </p>
+                        <!-- <p class="card-text ms-2">
+                          <a href="/books/<%=j%>" class="text-muted"
+                            >Personal finance, Non-fiction</a
+                          >
+                        </p> -->
+                      </div>
+                    </div>
+                   
+                  </div>
+                  <hr />
+                  <button type="button" class="btn btn-primary w-25 ms-auto mb-2 ">
+                    <a href="/books/<%=j%> " class="text-light">More</a>
+                  </button>
+                </div>
+              </div>
+              <%}%>
+             
+  
+      <!-- END OF CARD CONTAINER-->
+  
+      <div class="container mt-5" id="footer">
+        <div class="row">
+          <div class="col col-sm-12">
+            <h1>Follow Us</h1>
+            <div class="btn-group">
+              <a class="btn btn-twitter btn-lg" href="#"
+                ><i class="icon-twitter icon-large"></i> Twitter</a
+              >
+              <a class="btn btn-facebook btn-lg" href="#"
+                ><i class="icon-facebook icon-large"></i> Facebook</a
+              >
+              <a class="btn btn-google-plus btn-lg" href="#"
+                ><i class="icon-google-plus icon-large"></i> Google+</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <footer>
+        <div class="container">
+          <div class="row mt-5 pt-3 pb-3">
+            <div class="col-sm-12 d-flex">
+              <p class="ms-auto">Built by <a href="#">Neeraj Jerauld</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+      <!-- <script src="/js/bootstrap.min.js"></script> -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

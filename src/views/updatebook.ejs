@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Book</title>
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" /> -->
+    <link rel="stylesheet" href="/css/bootstrapstyle.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn btn-outline-primary ms-5 me-2" type="button">
+                  <a
+                    class="nav-link active text-white"
+                    aria-current="page"
+                    href="/"
+                    >Home</a
+                  >
+                </button>
+              </li>
+              <%for(i=0;i<nav.length;i++){%>
+                  
+                  <li class="nav-item">
+                    <button class="btn btn-outline-primary me-2 " type="button">
+                      <a class="nav-link active text-white" aria-current="page" href="<%=nav[i].link%>"
+                        ><%=nav[i].name%></a
+                      >
+                    </button>
+                  </li>
+                <%}%>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid pb-4" id="masthead">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="">
+            <h1 class="mx-5 mt-5">Update Book</h1>
+            <!-- <h6 class="mx-5 pb-5">Sub-heading</h6> -->
+          </div>
+        </div>
+        <div class="col-lg-6">
+          
+          <div
+              class="row ms-3 me-3 mt-4 mb-5"
+              style="height: 127px"
+            >
+              <div class="col ">
+                <img src="/images/logo.png" alt="logoImage">
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF MASTHEAD -->
+
+    <!-- =========================================== -->
+    <div class="container-fluid col-md-5 col-xl-4 colorWhite g-0">
+      <!-- <div class="row text-center mb-3 mt-3 justify-content-center">
+        <p class="h3 colorBlue">Add Book</p>
+      </div> -->
+      <!-- END OF SIGN UP TEXT -->
+
+      <div class="row bgcolorBlue justify-content-center mb-1 rounded">
+        <div class="col-12 px-5">
+          <form
+            class="row g-1 mt-4"
+            action="/updatebook/<%=book.title%>"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="col-12">
+                
+                  
+              <label  for="title" class="form-label">Title</label>
+              <div class="d-flex">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="booktitle" 
+                  name="title"
+                  value="<%=book.title%>"
+                  required
+                     
+                />
+              </div>
+            </div>
+
+            <!-- END OF Title -->
+            <div class="col-12">
+                
+              <label for="author" class="form-label"
+                >Author Name</label
+              >
+              <div class="d-flex">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="addauthor"
+                  name="author"
+                  value="<%=book.author%>"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- END OF Author name -->
+
+            <div class="col-12">
+                
+              <label for="genre" class="form-label">Genre</label>
+              <div class="d-flex">
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  id="genre"
+                  name="genre"
+                  value="<%=book.genre%>"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- END OF Genre -->
+
+            <div class="col-12">
+                
+                <label for="description" class="form-label">Description</label>
+                <div class="d-flex">
+                  <input
+                    type="text"
+                    class="form-control rounded-3"
+                    id="description"
+                    name="description"
+                    value="<%=book.description%>"
+                    required
+                  />
+                </div>
+              </div>
+
+            <!-- END OF Description -->
+
+            <div class="col-12 mb-4">
+              
+           
+              <label for="image" class="form-label">Image</label>
+              <div class="d-flex">
+                <input class="form-control form-control-lg"  name="image" id="fileToUpload" type="file" src="<%=book.image%>" required/>
+              </div>
+            </div>
+            
+
+            <!-- END OF Image -->
+            
+
+
+
+
+            <div class="col-10 mb-3 mx-auto">
+              <button
+                type="submit"
+                class="btn btn-outline-primary mx-auto w-100 rounded-pill"
+              >
+                Update Book
+              </button>
+            </div>
+            <!-- END OF SUBMIT BUTTON -->
+            <hr />
+          </form>
+          <!-- END OF FORM -->
+        </div>
+        <!-- END OF COLUMN TEXT -->
+      </div>
+      <!-- END OF SIGN IN ROW -->
+    </div>
+    <!-- END OF CONTAINER -->
+
+    <!-- <script src="/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
